@@ -70,6 +70,10 @@ export async function createApp(
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
+  // Body parsing for OAuth endpoints
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
+
   // MCP SDK OAuth routes (/.well-known/*, /authorize, /token, /register, /revoke)
   app.use(
     mcpAuthRouter({
